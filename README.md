@@ -13,7 +13,6 @@ Adds voice responses to Claude Code using macOS text-to-speech. Claude speaks it
 **Usage:**
 - Type `voice on` to enable voice responses
 - Type `voice off` to disable (also stops any in-progress speech)
-- Type `shh` to stop speech mid-playback (voice stays enabled)
 - Voice is off by default
 
 **Stop speech with a keyboard shortcut:**
