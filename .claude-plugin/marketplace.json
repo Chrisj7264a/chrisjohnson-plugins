@@ -1,0 +1,16 @@
+{
+  "name": "chrisjohnson-plugins",
+  "owner": {
+    "name": "Chris Johnson"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugins by Chris Johnson"
+  },
+  "plugins": [
+    {
+      "name": "claude-text-to-speech",
+      "source": "./plugins/claude-text-to-speech",
+      "description": "Voice responses from Claude Code using macOS text-to-speech. Toggle with 'voice on' / 'voice off'."
+    }
+  ]
+}
