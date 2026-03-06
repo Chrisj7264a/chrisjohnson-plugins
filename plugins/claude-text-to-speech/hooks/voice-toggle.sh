@@ -22,6 +22,11 @@ case "$PROMPT" in
     echo "Voice disabled." >&2
     exit 2
     ;;
+  "shh")
+    killall say 2>/dev/null
+    echo "Speech stopped." >&2
+    exit 2
+    ;;
   *)
     exit 0  # pass through
     ;;

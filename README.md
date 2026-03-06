@@ -13,7 +13,16 @@ Adds voice responses to Claude Code using macOS text-to-speech. Claude speaks it
 **Usage:**
 - Type `voice on` to enable voice responses
 - Type `voice off` to disable (also stops any in-progress speech)
+- Type `shh` to stop speech mid-playback (voice stays enabled)
 - Voice is off by default
+
+**Stop speech with a keyboard shortcut:**
+
+You can set up a global macOS hotkey to stop speech instantly from any app:
+
+1. Copy `extras/StopSpeech.workflow` to `~/Library/Services/`
+2. Open **System Settings > Keyboard > Keyboard Shortcuts > Services > General**
+3. Find **Stop Speech** and assign a shortcut (e.g., `⌘S` or `⌃.`)
 
 **Configuration** (optional environment variables in `~/.zshrc`):
 
@@ -21,7 +30,6 @@ Adds voice responses to Claude Code using macOS text-to-speech. Claude speaks it
 |---|---|---|
 | `CLAUDE_TTS_VOICE` | `Samantha` | macOS voice name (run `say -v '?'` to list available voices) |
 | `CLAUDE_TTS_RATE` | `210` | Speech rate in words per minute |
-| `CLAUDE_TTS_MAX_CHARS` | `500` | Max characters to speak before truncating |
 
 **Tip:** Download premium voices in System Settings > Accessibility > Spoken Content > System Voice > Manage Voices for better quality.
 

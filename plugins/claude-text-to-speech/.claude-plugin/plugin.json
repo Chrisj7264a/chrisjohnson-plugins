@@ -1,7 +1,7 @@
 {
   "name": "claude-text-to-speech",
   "description": "Voice responses from Claude Code using macOS text-to-speech. Toggle with 'voice on' / 'voice off'.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": {
     "name": "Chris Johnson"
   },
