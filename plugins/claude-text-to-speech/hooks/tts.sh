@@ -6,7 +6,7 @@
 #
 # Toggle: type "voice on" / "voice off" in Claude Code to control.
 # Configuration (env vars):
-#   CLAUDE_TTS_VOICE     - macOS voice name (default: Samantha)
+#   CLAUDE_TTS_VOICE     - macOS voice name (default: Lee (Premium), falls back to Samantha)
 #   CLAUDE_TTS_RATE      - Speech rate in words per minute (default: 210)
 #   CLAUDE_TTS_MAX_CHARS - Max characters to speak (default: 500)
 
@@ -15,7 +15,16 @@ TOGGLE_FILE="$HOME/.claude/tts-enabled"
 # Only speak if toggled on
 [[ ! -f "$TOGGLE_FILE" ]] && exit 0
 
-VOICE="${CLAUDE_TTS_VOICE:-Samantha}"
+# Default to Lee (Premium) if available, otherwise Samantha
+if [[ -z "$CLAUDE_TTS_VOICE" ]]; then
+  if say -v 'Lee (Premium)' '' 2>/dev/null; then
+    VOICE="Lee (Premium)"
+  else
+    VOICE="Samantha"
+  fi
+else
+  VOICE="$CLAUDE_TTS_VOICE"
+fi
 RATE="${CLAUDE_TTS_RATE:-210}"
 MAX_CHARS="${CLAUDE_TTS_MAX_CHARS:-500}"
 
