@@ -61,7 +61,8 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>killall say 2>/dev/null
+					<string>pkill -x afplay 2>/dev/null
+killall say 2>/dev/null
 exit 0</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
