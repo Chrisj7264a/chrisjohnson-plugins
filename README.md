@@ -51,6 +51,41 @@ The hotkey kills both ElevenLabs (`afplay`) and macOS `say` playback.
 
 **Tip:** For macOS fallback voices, download premium voices in System Settings > Accessibility > Spoken Content > System Voice > Manage Voices.
 
+### homebot-cycle-setup
+
+Automates Linear project setup at the start of each Homebot Shape Up cycle. Pulls the cycle brief from Notion, finds pitches where you're listed as Driver, and creates one Linear project per pitch with milestones, summary (the pitch's `Done` outcome), description (pitch + brief links), team, initiatives, priority, dates, and an icon.
+
+**Requirements:**
+- Homebot Notion + Linear access (the skill is wired to Homebot's workspaces and the Pitches Database schema).
+- Notion MCP and Linear MCP both connected and authenticated.
+
+**One-time setup (recommended):**
+
+Set your @homebot.ai email so the skill can find your pitches without prompting each run:
+
+```bash
+echo 'export HOMEBOT_USER_EMAIL="you@homebot.ai"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+If unset, the skill will prompt for it on first run.
+
+**Usage:**
+
+- "Set up Linear for cycle 4"
+- "Kick off this cycle in Linear"
+- `/cycle-linear-setup` (if Claude routes slash commands to the skill)
+
+**What it does:**
+
+1. Confirms scope: shows your committed pitches for the cycle and waits for `y / edit / cancel`.
+2. For each pitch with no explicit milestone list, drafts 3-4 candidates and asks for approval; pitches with explicit milestones use the pitch verbatim.
+3. Creates Linear projects in parallel (one per pitch) with team, initiatives, priority, dates, lead = you, status = Shaped, and an icon.
+4. Creates milestones with the full scope from the pitch's "Boundaries → In" section, preserving bullet/numbered formatting.
+5. Reports a summary table with Linear URLs and any assumptions/gaps to dial in.
+
+After the run, dial in any gaps (Tech Lead, members, milestone tweaks) and flip Status from `Shaped` → `Bet` when ready.
+
 ## Installation
 
 Add the marketplace:
@@ -63,4 +98,5 @@ Install a plugin:
 
 ```
 /plugin install claude-text-to-speech@chrisjohnson-plugins
+/plugin install homebot-cycle-setup@chrisjohnson-plugins
 ```

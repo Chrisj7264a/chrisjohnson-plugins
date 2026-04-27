@@ -1,0 +1,11 @@
+{
+  "name": "homebot-cycle-setup",
+  "description": "Homebot Shape Up cycle kickoff: pulls the cycle brief from Notion, finds pitches you drive, and creates one Linear project per pitch with milestones derived from the pitch.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chris Johnson"
+  },
+  "repository": "https://github.com/Chrisj7264a/chrisjohnson-plugins",
+  "license": "MIT",
+  "keywords": ["homebot", "shape-up", "linear", "notion", "cycle", "product"]
+}

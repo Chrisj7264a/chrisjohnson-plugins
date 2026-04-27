@@ -11,6 +11,11 @@
       "name": "claude-text-to-speech",
       "source": "./plugins/claude-text-to-speech",
       "description": "Voice responses from Claude Code using macOS text-to-speech. Toggle with 'voice on' / 'voice off'."
+    },
+    {
+      "name": "homebot-cycle-setup",
+      "source": "./plugins/homebot-cycle-setup",
+      "description": "Homebot Shape Up cycle kickoff: pulls the cycle brief from Notion, finds pitches you drive, and creates one Linear project per pitch with milestones derived from the pitch."
     }
   ]
 }
