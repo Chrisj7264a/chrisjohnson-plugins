@@ -1,7 +1,7 @@
 {
   "name": "claude-text-to-speech",
   "description": "Voice responses from Claude Code. Uses ElevenLabs if ELEVENLABS_API_KEY is set, otherwise macOS say. Toggle with 'voice on' / 'voice off', interrupt with 'voice stop'.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Chris Johnson"
   },
